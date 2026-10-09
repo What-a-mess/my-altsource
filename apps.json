@@ -1,0 +1,34 @@
+[
+  {
+    "repo": "Kyosee/VeneraX",
+    "assetRegex": "VeneraX-ios-.*\\.ipa",
+    "name": "VeneraX",
+    "developerName": "Kyosee",
+    "localizedDescription": "Venera 的个人维护分支，提供漫画阅读及功能增强。",
+    "iconURL": "https://raw.githubusercontent.com/Kyosee/VeneraX/master/assets/app_icon.png"
+  },
+  {
+    "repo": "CyrilPeng/Venera-Next",
+    "assetRegex": "VeneraNext-ios-.*\\.ipa",
+    "name": "Venera Next",
+    "developerName": "CyrilPeng",
+    "localizedDescription": "跨平台漫画阅读器，支持本地漫画、WebDAV 和第三方网络漫画源。",
+    "iconURL": "https://raw.githubusercontent.com/CyrilPeng/Venera-Next/main/assets/app_icon.png"
+  },
+  {
+    "repo": "bggRGjQaUbCoE/PiliPlus",
+    "assetRegex": "PiliPlus_ios_.*\\.ipa",
+    "name": "PiliPlus",
+    "developerName": "PiliPlus contributors",
+    "localizedDescription": "使用 Flutter 构建的第三方哔哩哔哩客户端。",
+    "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png"
+  },
+  {
+    "repo": "EhPanda-Team/EhPanda",
+    "assetRegex": "EhPanda\\.ipa",
+    "name": "EhPanda",
+    "developerName": "EhPanda Team",
+    "localizedDescription": "使用 SwiftUI 和 TCA 构建的非官方 E-Hentai iOS 客户端。",
+    "iconURL": "https://raw.githubusercontent.com/EhPanda-Team/EhPanda/main/EhPanda/App/Assets.xcassets/AppIcon.appiconset/1024.png"
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "name": "Wamess SideStore Source",
+  "identifier": "io.github.wamess.sidestore.source",
+  "apps": [
+    {
+      "name": "VeneraX",
+      "developerName": "Kyosee",
+      "localizedDescription": "Venera 的个人维护分支，提供漫画阅读及功能增强。",
+      "iconURL": "https://raw.githubusercontent.com/Kyosee/VeneraX/master/assets/app_icon.png",
+      "bundleIdentifier": "io.github.kyosee.venera",
+      "versions": [
+        {
+          "version": "2.3.6",
+          "buildVersion": "249",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/Kyosee/VeneraX/releases/download/v2.3.6/VeneraX-ios-2.3.6%2B249.ipa",
+          "size": 38818608,
+          "localizedDescription": "> **Language / 语言**: [English](https://github.com/Kyosee/VeneraX/blob/v2.3.6/release-notes/v2.3.6.en.md) · [简体中文](https://github.com/Kyosee/VeneraX/blob/v2.3.6/release-notes/v2.3.6.zh-CN.md)\n\n## What's Changed\n\n### Added\n- No new features were added in this release.\n\n### Changed\n- No other feature changes in this release.\n\n### Fixed\n- Fixed blank covers after opening details and returning when the same comic appears in multiple home sections, such as History, Read Later or Local.\n- Fixed the Tasks page showing an error instead of the empty list after an expanded upload task finishes.\n- Fixed task cards losing or sharing their expanded state after filtering the task list.\n\n### Removed\n- No features were removed in this release.\n\n**Full Changelog**: https://github.com/Kyosee/VeneraX/compare/v2.3.5...v2.3.6\n",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "version": "2.3.6",
+      "versionDate": "2026-10-09",
+      "downloadURL": "https://github.com/Kyosee/VeneraX/releases/download/v2.3.6/VeneraX-ios-2.3.6%2B249.ipa",
+      "size": 38818608
+    },
+    {
+      "name": "Venera Next",
+      "developerName": "CyrilPeng",
+      "localizedDescription": "跨平台漫画阅读器，支持本地漫画、WebDAV 和第三方网络漫画源。",
+      "iconURL": "https://raw.githubusercontent.com/CyrilPeng/Venera-Next/main/assets/app_icon.png",
+      "bundleIdentifier": "com.github.cyrilpeng.veneranext",
+      "versions": [
+        {
+          "version": "1.17.0",
+          "buildVersion": "228",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/CyrilPeng/Venera-Next/releases/download/v1.17.0/VeneraNext-ios-1.17.0%2B228.ipa",
+          "size": 20070423,
+          "localizedDescription": "本次正式版新增自动阅读、自动选择阅读模式、条漫左右边距、定时同步与多源仓库管理，完善 PDF 后台导入和离线阅读，并为 Linux x64／ARM64 增加 RPM、AppImage 分发格式。\n\n### 新增\n\n- 自动阅读覆盖全部七种阅读模式：分页按秒翻页，连续与瀑布流可选择平滑滚动或步进滚动，支持自动跨章及单本／设备设置。长按操作可选择放大图片、开始／停止自动阅读或无操作，并继承旧版长按缩放设置。\n- 阅读器可按漫画原图比例自动选择页漫或条漫模式，默认关闭；单本手动设置优先，切换时保留章节与源图片位置。纵向连续与瀑布流新增左右边距，每侧支持 0%–30%，沿用全局／设备／单本设置，宽度限制同步遵循对应设置范围（#82）。\n- 数据同步新增定时模式，可选 5／15／30／60／180／360 分钟，默认 30 分钟；合并本地修改，无修改时检查远端版本，保存待上传状态并在启动或恢复前台时补做到期同步，失败后按间隔重试。手动模式不再自动传输，所有模式均保留立即上传／下载。\n- 漫画源统一通过“添加来源”导入链接、粘贴内容或 JS／JSON 文件，按内容识别并预览脚本与来源列表，支持选择安装、保存在线仓库、管理多个仓库及来源关联。安装队列支持并发下载、取消、重试和进度查看。\n- PDF 导入独立于进度框运行，收起进度或返回后可继续阅读；主页及本地漫画页提供任务入口，可重新查看进度、取消排队／运行任务和管理完成结果。多批次串行转换，JPEG 编码移至工作 isolate，减少界面阻塞（#75）。\n- Linux x64／ARM64 在原有分发格式之外新增 RPM 和 AppImage；AppImage 随包提供 GTK 3、WebKitGTK 4.1、相关依赖、WebKit 子进程与沙箱辅助程序、图片加载器和字体配置，无需另外安装 GTK／WebKit。\n\n### 修复\n\n- 已下载漫画按稳定章节 ID 读取图片，避免源章节顺序变化后访问错误目录；目录缺失或为空时尝试在线恢复并提示，纯本地漫画提供恢复文件指引，保留本地记录和路径诊断日志。画廊与瀑布流共用加载逻辑，启动时等待存储路径校验完成（#76）。\n- PDF 转换、入库与存储迁移、扫描恢复互斥，避免移动或删除正在写入的目录、提前扫描未完成漫画；迁移／恢复先开始时，PDF 等待其结束后继续，失败及取消均释放保护并清理未完成内容（#75）。\n- 阅读进度条改为直接定位，修复连续阅读长章节快速跳页后无法触摸滚动的问题；导航与动画异常均正确释放触摸拦截。\n- 自动阅读在完整读完长图后才跨章，瀑布流等待下一章加载完成后继续，末章停止后可重新启动；触摸、缩放、设置侧栏及应用进入后台时暂停，加载失败时停止，设置修改即时生效。阅读器 Overlay 随章节和模式更新，下一章加载失败后保留手动重试入口。\n- 修复本地漫画版式识别错误处理 `file://` 路径的问题，单本模式设置值异常时安全回退；版式识别限制图片读取并发和总时长，退出时取消下载及后续采样。\n- iOS 与宽屏侧栏返回手势统一从 24 像素边缘开始，修复中部滑动误返回、取消后仍返回及多指操作状态异常。收藏排序页与收藏夹共用列表／画廊模式、列数和卡片间距，保持拖拽排序及重启后的结果一致（#80）。\n- 追更检查改为按源限流的并发队列，全局最多五本、同源最多两本，同源启动间隔至少 500 毫秒，单本最多等待 45 秒；取消、关闭进度框或新检查会终止旧队列、重试和关联请求，防止迟到结果修改收藏。\n- 漫画源文件重试重新读取文件，重复导入可确认替换；编辑器保存后重新加载，外部编辑器启动失败时回退内置编辑器。解析或初始化失败保留原源，错误可查看和复制；调试器等待并格式化异步结果，修复可选配置解析和重复加载的函数引用泄漏。\n- 漫画源更新取消时同时终止仓库查询及脚本下载，迟到响应不再修改已安装源；仓库无效条目会跳过并汇总提示，支持解除仓库关联，重复更新同一源时明确提示。\n- 修复 AppImage 缺少 `libwebkit2gtk-4.1.so.0` 导致无法启动的问题，通过私有临时副本重定位 WebKit 硬编码路径，保留 WebKit 沙箱设置，并随包保存依赖版本和版权说明。\n\n### 维护与文档\n\n- 发布版本更新为 `1.17.0+228`，同步应用版本、发布配置与更新记录。\n- 更新日志页面测试等待大文件的后台解码完成，避免完整日志超过 50 KB 后在测试时持续显示加载状态。\n- 增加 Git 依赖审计清单与 CI 检查，覆盖直接及传递依赖的来源、完整 commit 和包路径；JS 引擎、图片缩放、连续滚动、WebView 及 WebDAV 切换至项目维护者的固定 commit fork，并记录维护责任、替换评估、回滚方式及待核实许可证事项。\n- 使用项目内 Python 脚本和系统 `dpkg-deb` 替代定制 Debian 打包依赖，校验架构、资源及安装目录；固定并校验 AppImage 工具和运行时，拒绝遗漏非系统基础运行库，为两种 Linux 架构增加实际打包、窗口启动、WebKit 网页加载及沙箱检查。\n- 为 WebDAV 同步增加不含凭据、查询参数或传输内容的请求诊断日志，保留远端路径大小写；增加大小写敏感且禁止建目录的服务回归测试。修复定时同步跨模块导入，恢复结构检查。\n- 清理 AltStore 中原版 Venera 的安装包和新闻，更新脚本校验本项目发布来源并保留有效历史。\n- 更新中英文项目介绍、Linux 安装与分发说明、PDF 导入指南、源仓库及调试指南；补全漫画源模板和 JavaScript API，明确章节阅读顺序、稳定章节 ID 及历史／下载兼容要求（#83）。\n\n### 运行说明\n\n- 定时同步和 PDF 后台导入仅在应用运行期间执行；定时同步在下次启动或恢复前台时补做到期检查，PDF 导入不支持退出应用后继续或跨重启续传。\n- AppImage 需要 glibc 2.35 或更新版本、兼容的 OpenGL／EGL 驱动，以及可写、可执行且留有约 100 MB 空间的 `/tmp`。\n",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "version": "1.17.0",
+      "versionDate": "2026-09-29",
+      "downloadURL": "https://github.com/CyrilPeng/Venera-Next/releases/download/v1.17.0/VeneraNext-ios-1.17.0%2B228.ipa",
+      "size": 20070423
+    },
+    {
+      "name": "PiliPlus",
+      "developerName": "PiliPlus contributors",
+      "localizedDescription": "使用 Flutter 构建的第三方哔哩哔哩客户端。",
+      "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "bundleIdentifier": "com.example.piliplus",
+      "versions": [
+        {
+          "version": "2.1.6",
+          "buildVersion": "5453",
+          "date": "2026-10-05",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.6/PiliPlus_ios_2.1.6%2B5453.ipa",
+          "size": 24083344,
+          "localizedDescription": "支持离线合集归档\r\n支持离线/更新空降片段\r\n添加视频过滤作用域详情\r\n支持切换`番剧`/`剧集`季度\r\n支持横屏时在侧栏显示`番剧`列表\r\n直播聊天显示`主播`标识 #3156\r\n直播聊天只显示点亮的牌子 #3155\r\n用户未直播时在主页显示入口按钮 #3033\r\n从视频切到直播不影响视频倍速 #3112\r\n支持转发同时评论 #3135\r\n@ 用户时置顶被`回复`/`转发`用户 #3123\r\n视频控制栏控件溢出处理 #3085\r\n添加英文文档 #3131 by @maoawa\r\n桌面端画中画记忆窗口位置大小 #2997\r\n收藏夹已满且未收藏时禁用选中 #3113\r\niOS 支持系统 PIP #3160 by @AotianNeo\r\n黑名单屏蔽扩展本地屏蔽，增加过滤搜索、评论\r\n支持按 `Enter` 保存截图 #3101 by @403bug\r\n支持从媒体会话向前/后跳转音视频 #2964 co-by @silverwolf-lv9999\r\n\r\n修复弹幕速度 #3136\r\n修复收藏夹视频跳转 #3137\r\n修复下滑关闭侧栏主页 #3160\r\n修复触控板浏览图片 https://github.com/bggRGjQaUbCoE/PiliPlus/issues/183#issuecomment-5976539299\r\n修复 Windows 26H2 任务栏不在底部时，退出全屏出现窗口偏移 #2901",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "version": "2.1.6",
+      "versionDate": "2026-10-05",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.6/PiliPlus_ios_2.1.6%2B5453.ipa",
+      "size": 24083344
+    },
+    {
+      "name": "EhPanda",
+      "developerName": "EhPanda Team",
+      "localizedDescription": "使用 SwiftUI 和 TCA 构建的非官方 E-Hentai iOS 客户端。",
+      "iconURL": "https://raw.githubusercontent.com/EhPanda-Team/EhPanda/main/EhPanda/App/Assets.xcassets/AppIcon.appiconset/1024.png",
+      "bundleIdentifier": "app.ehpanda",
+      "versions": [
+        {
+          "version": "2.8.1",
+          "buildVersion": "158",
+          "date": "2026-07-20",
+          "downloadURL": "https://github.com/EhPanda-Team/EhPanda/releases/download/v2.8.1/EhPanda.ipa",
+          "size": 7352364,
+          "localizedDescription": "1. feat: Adapt to the new Liquid Glass design.\r\n3. fix: Gesture issue in the reading page.\r\n4. fix: Crash issue in eh setting page.\r\n5. fix: A minor issue in search page.",
+          "minOSVersion": "26.0"
+        }
+      ],
+      "version": "2.8.1",
+      "versionDate": "2026-07-20",
+      "downloadURL": "https://github.com/EhPanda-Team/EhPanda/releases/download/v2.8.1/EhPanda.ipa",
+      "size": 7352364
+    }
+  ],
+  "news": []
+}

@@ -1,0 +1,46 @@
+name: Update SideStore source
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+  push:
+    branches: [main]
+    paths:
+      - apps.json
+      - source-config.json
+      - update.py
+      - .github/workflows/update.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-source
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Generate source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python update.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add source.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Update SideStore source"
+          git push origin HEAD:main
