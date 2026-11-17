@@ -25,7 +25,7 @@
   },
   {
     "repo": "EhPanda-Team/EhPanda",
-    "assetRegex": "EhPanda\\.ipa",
+    "assetRegex": "EhPanda(?:-SideStore)?\\.ipa",
     "name": "EhPanda",
     "developerName": "EhPanda Team",
     "localizedDescription": "使用 SwiftUI 和 TCA 构建的非官方 E-Hentai iOS 客户端。",
