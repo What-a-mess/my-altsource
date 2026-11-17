@@ -10,19 +10,19 @@
       "bundleIdentifier": "io.github.kyosee.venera",
       "versions": [
         {
-          "version": "2.3.12",
-          "buildVersion": "257",
-          "date": "2026-11-08",
-          "downloadURL": "https://github.com/Kyosee/VeneraX/releases/download/v2.3.12/VeneraX-ios-2.3.12%2B257.ipa",
-          "size": 39009856,
-          "localizedDescription": "> **Language / 语言**: [English](https://github.com/Kyosee/VeneraX/blob/v2.3.12/release-notes/v2.3.12.en.md) · [简体中文](https://github.com/Kyosee/VeneraX/blob/v2.3.12/release-notes/v2.3.12.zh-CN.md)\n\n## What's Changed\n\n### Added\n- Added a Multi-Select button to the local favorites toolbar for organizing comics in bulk.\n- Added Read and Continue reading actions to comic menus so you can start reading or resume your last position directly.\n- Added an Actions button to detailed comic lists on mobile for opening a comic's menu with a tap.\n\n### Changed\n- Improved compatibility with iOS 27 and iPhone Duo, including full-screen layouts on the unfolded inner display.\n- Organized settings into 10 categories, with category navigation on the left on desktop and a category list on mobile.\n- Settings pages now show common options first, with further options such as page layout and gestures under More settings.\n- Improved settings layouts on large screens, made single options fill their row, and tightened mobile header spacing to reduce empty space and duplicate titles.\n- Settings now switch between one and two panes based on the available width, improving layouts on foldables, split-screen views and smaller desktop windows.\n- Enlarged desktop comic menu text and click targets, and grouped actions such as favorites and collections more clearly.\n- Mobile comic menus now open as bottom sheets that emphasize reading and show shortcuts and current states for favorites, read later and downloads.\n- Updated the English and Chinese guides with the new settings paths, search, reader sidebar and menu controls.\n\n### Fixed\n- Fixed overlapping and overflowing text in the reading settings sidebar on high-resolution windows.\n- Fixed secondary settings opening full screen from the reader sidebar; navigation and Back now stay inside the sidebar.\n- Fixed duplicate spacing along screen edges on some devices and cramped settings content in narrow windows.\n- Fixed keyboard navigation not becoming available immediately after opening a desktop menu.\n- Fixed some guide contents entries failing to jump to their sections.\n\n### Removed\n- No features were removed in this release.\n\n**Full Changelog**: https://github.com/Kyosee/VeneraX/compare/v2.3.11...v2.3.12\n",
+          "version": "3.0.0",
+          "buildVersion": "258",
+          "date": "2026-11-15",
+          "downloadURL": "https://github.com/Kyosee/VeneraX/releases/download/v3.0.0/VeneraX-ios-3.0.0%2B258.ipa",
+          "size": 39423677,
+          "localizedDescription": "> **Language / 语言**: [English](https://github.com/Kyosee/VeneraX/blob/v3.0.0/release-notes/v3.0.0.en.md) · [简体中文](https://github.com/Kyosee/VeneraX/blob/v3.0.0/release-notes/v3.0.0.zh-CN.md)\n\n## What's Changed\n\n### Added\n- Added a HarmonyOS version with two packages: ARM64 for phones and x64 for the emulator. The packages are unsigned, so you need to sign them yourself before installing (#296).\n- Added Recent reading, Following, New updates and Local comics widgets for Android, HarmonyOS (service cards), iOS and macOS; whether they work on Apple platforms depends on how the app is signed and sideloaded (#338).\n- Long-press the app icon to jump to Favorites, Following, History or Search on Android, iOS and HarmonyOS; on Android and iOS, open the app once after updating for the shortcuts to appear (#346).\n- Added an optional adaptive reading mode that tells vertical-scroll comics from paged comics by their images and picks a suitable reading mode (#333).\n- Added a first-use guide that helps new users set up language, permissions, backup restore and WebDAV; existing users skip it.\n- Added a \"Clear reading progress when deleting a single history entry\" option; when enabled, deleting one history entry also clears its reading progress, while reading time statistics are kept (#341).\n\n### Changed\n- Redesigned reading statistics with recent, monthly, all-time and custom date ranges, a reading calendar and trends, and total reading time per comic (#332, #342).\n- Random picks now offer Single draw and Choose from three, with no duplicate comics in the same round.\n- Local comics can now open to details or start reading on tap, sort by file size, and let you choose separately whether deleting removes the comic files, favorites and history (#321).\n- The favorites dialog now lets you add to or remove from several folders in a row without closing after each change (#345).\n- The Auto Language Filters switch is replaced by choosing which comic sources the search language filter applies to, so sources that do not support the filter are not affected.\n- Importing comics now shows the current step, a progress bar and the comic being processed; if the import fails partway, comics already copied are still added to the library (#347).\n- Downloads now continue past individual unavailable pages, and you can retry the missing pages or keep what was downloaded.\n- Turning back from the first page of a chapter now goes to the previous chapter's comments page first, then its last page (#343).\n- The chapter comments page now supports the tap-to-turn areas.\n- Redesigned the update dialog for clearer release notes and download progress.\n- The Windows update window now uses the app's colors and shows installation progress.\n- The log page now supports search, filtering by level and tag, export, and keeps the previous run's logs to help troubleshoot problems.\n- Covers stay cached longer (90 days after they were last viewed), and pull-to-refresh on a comic's details page updates its cover (#332).\n- Translation model downloads can resume after an interruption when the server allows it, and failed downloads can be retried (#335).\n- Improved the settings layout: the sidebar search box stays visible, groups use a single column on wide screens, and history settings moved to Browsing & filters.\n- On desktop, Esc and the mouse Back button now go back one level at a time instead of jumping to the home page.\n- Improved browsing performance in large libraries, with less lag when opening lists and switching pages.\n- Backups leave out unnecessary content, so they take less space while keeping all personal data.\n- Updated the user agreement and disclaimer.\n\n### Fixed\n- Fixed tapping Previous chapter in continuous reading changing the title but still showing the current chapter (#340).\n- Fixed page turns and the saved reading position getting out of sync in right-to-left continuous reading.\n- Fixed duplicated, misplaced or briefly unsplit images when turning pages quickly with wide page splitting or two images in landscape (#337).\n- Fixed quick repeated right swipes, or a right swipe during the page-turn animation, accidentally going back in right-to-left reading (#344).\n- Fixed downloads getting stuck after request or cache errors.\n- Fixed duplicated chapters in local comics after downloading more chapters.\n- Fixed missing or duplicated chapters and pages after exporting and re-importing comic archives and CBZ files.\n- Fixed comic archive import and export paths when using an external directory on Android.\n- Fixed incorrect task states after a PDF export failed or was canceled.\n- Fixed favorite tags containing commas or quotes being split or altered.\n- Fixed cleared reading progress being written back by refreshes and similar actions.\n- Fixed history entries for local comics read on another device having no cover and failing to open (#348).\n- Fixed updates already read on another device being marked as new again (#336).\n- Fixed saving WebDAV settings running the initial sync twice (#335).\n- Fixed the app lock not staying locked when device authentication is unavailable.\n- Fixed Esc closing the app lock screen on desktop.\n- Fixed titles and covers being squeezed and cut off in Brief mode on phones; the action button next to the title has been removed (#331).\n\n### Removed\n- No features were removed in this release.\n\n**HarmonyOS installation and signing**: https://github.com/Kyosee/VeneraX/blob/v3.0.0/doc/harmonyos-testing.en.md\n\n**Full Changelog**: https://github.com/Kyosee/VeneraX/compare/v2.3.12...v3.0.0\n",
           "minOSVersion": "15.1"
         }
       ],
-      "version": "2.3.12",
-      "versionDate": "2026-11-08",
-      "downloadURL": "https://github.com/Kyosee/VeneraX/releases/download/v2.3.12/VeneraX-ios-2.3.12%2B257.ipa",
-      "size": 39009856
+      "version": "3.0.0",
+      "versionDate": "2026-11-15",
+      "downloadURL": "https://github.com/Kyosee/VeneraX/releases/download/v3.0.0/VeneraX-ios-3.0.0%2B258.ipa",
+      "size": 39423677
     },
     {
       "name": "Venera Next",
@@ -54,19 +54,19 @@
       "bundleIdentifier": "com.example.piliplus",
       "versions": [
         {
-          "version": "2.2.0",
-          "buildVersion": "5598",
-          "date": "2026-11-03",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.0.2/PiliPlus_ios_2.2.0%2B5598.ipa",
-          "size": 24933082,
-          "localizedDescription": "更新投屏依赖 https://github.com/bggRGjQaUbCoE/PiliPlus/issues/2680#issuecomment-6597938908\r\n修复部分视频评论显示不全 #3458\r\n修复播放课堂视频 #3454 by @ucxn\r\n修复 macOS 关闭系统标题栏后无法拖动 #3453 by @NalCol\r\n修复点赞弹幕跳转未留提前量，导致跳转到弹幕时无法加载 #3459 by @Rim-World\r\nChromeOS(ARC) 上不再主动请求屏幕方向，由系统决定窗口方向 #3406 co-by @selcarpa",
+          "version": "2.2.1",
+          "buildVersion": "5655",
+          "date": "2026-11-14",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.1/PiliPlus_ios_2.2.1%2B5655.ipa",
+          "size": 25053075,
+          "localizedDescription": "支持管理粉丝勋章\r\n支持进入直播间自动佩戴对应粉丝牌，默认关\r\n动态支持查看全文 https://github.com/bggRGjQaUbCoE/PiliPlus/issues/3420#issuecomment-6716986635\r\n支持更新已缓存视频的合集信息\r\n支持缓存/更新视频字幕、分段信息、音量均衡信息\r\n支持桌面端推荐 #3463 by @liaolon\r\n直播画中画、媒体通知添加刷新、弹幕显示按钮\r\n直播支持上报心跳、观看直播增加亲密度 #2073\r\n楼中楼评论支持线程式显示、保存评论链 #3351 by @My-Responsitories\r\n\r\n修复 bug\r\n修复音视频音频焦点问题 #2702\r\n修复部分视频评论显示不全 #3504\r\n修复私信失效卡片显示 #3481 by @HChaZZY\r\n修复动态详情页刷新指示器 #3477 by @PYH0809\r\n修复 iOS 登录验证码验证 #3484 by @ngbyspy\r\n修复 iOS 直播全屏底部边距 #3499 by @freejool\r\n修复 #3553 by @Tobiichi-Origuchi\r\n修复乐播旧控制地址导致的投屏失败 #3507 by @TG-Twilight\r\n修复 niri 退出画中画导致鼠标操作异常 #3471 by @Tobiichi-Origuchi\r\n修复播放器音量超过 100% 后的削波失真 #3448 by @No-World co-by @My-Responsitories",
           "minOSVersion": "15.0"
         }
       ],
-      "version": "2.2.0",
-      "versionDate": "2026-11-03",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.0.2/PiliPlus_ios_2.2.0%2B5598.ipa",
-      "size": 24933082
+      "version": "2.2.1",
+      "versionDate": "2026-11-14",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.2.1/PiliPlus_ios_2.2.1%2B5655.ipa",
+      "size": 25053075
     },
     {
       "name": "EhPanda",
@@ -76,19 +76,19 @@
       "bundleIdentifier": "app.ehpanda",
       "versions": [
         {
-          "version": "2.8.1",
-          "buildVersion": "158",
-          "date": "2026-07-20",
-          "downloadURL": "https://github.com/EhPanda-Team/EhPanda/releases/download/v2.8.1/EhPanda.ipa",
-          "size": 7352364,
-          "localizedDescription": "1. feat: Adapt to the new Liquid Glass design.\r\n3. fix: Gesture issue in the reading page.\r\n4. fix: Crash issue in eh setting page.\r\n5. fix: A minor issue in search page.",
-          "minOSVersion": "26.0"
+          "version": "3.0.0",
+          "buildVersion": "163",
+          "date": "2026-11-12",
+          "downloadURL": "https://github.com/EhPanda-Team/EhPanda/releases/download/3.0.0/EhPanda-SideStore.ipa",
+          "size": 18858399,
+          "localizedDescription": "EhPanda 3.0 is rebuilt with a new look.\r\n\r\n- Download galleries to read offline, sort them into folders, and keep downloading in the background.\r\n- Jump to galleries around any date with Seek to Date.\r\n- Log in with your username and password again, even behind a Cloudflare check.\r\n- Report comments, see a warning before posting, and block users.\r\n- Larger text, VoiceOver and Voice Control now work across the app.\r\n- Every screen rotates with your device, so the Enables landscape setting is gone.\r\n- The Auto-Lock setting is gone. To lock EhPanda, touch and hold its icon, then choose Require Face ID or Require Touch ID.\r\n- On first launch, you confirm you're an adult and choose how much anonymous usage data to share.\r\n- WebP images now display, and many bugs are fixed.\r\n\r\nhttps://ehpanda.app\r\n\r\n<details>\r\n<summary>Deutsch</summary>\r\n\r\nEhPanda 3.0 ist neu gebaut, mit neuem Design.\r\n\r\n- Lade Galerien zum Offline-Lesen herunter, sortiere sie in Ordner und lade im Hintergrund weiter.\r\n- Mit „Zu Datum springen“ gelangst du zu Galerien rund um ein beliebiges Datum.\r\n- Melde dich wieder mit Benutzername und Passwort an, auch hinter einer Cloudflare-Prüfung.\r\n- Du kannst Kommentare melden, vor dem Posten einen Hinweis sehen und Personen blockieren.\r\n- Größere Schrift, VoiceOver und Sprachsteuerung funktionieren jetzt in der ganzen App.\r\n- Jeder Bildschirm dreht sich mit deinem Gerät, daher entfällt die Einstellung „Enables landscape“.\r\n- Die Einstellung „Auto-Lock“ entfällt. Um EhPanda zu sperren, halte das Symbol gedrückt und wähle „Face ID anfordern“ oder „Touch ID anfordern“.\r\n- Beim ersten Start bestätigst du, dass du erwachsen bist, und wählst, wie viele anonyme Nutzungsdaten du teilst.\r\n- WebP-Bilder werden jetzt angezeigt, dazu viele Fehlerbehebungen.\r\n\r\n</details>\r\n\r\n<details>\r\n<summary>日本語</summary>\r\n\r\nEhPanda 3.0 は新しいデザインで生まれ変わりました。\r\n\r\n- ギャラリーをダウンロードしてオフラインで読めます。フォルダで整理でき、バックグラウンドでもダウンロードが続きます。\r\n- 「日付へ移動」で、指定した日付前後のギャラリーに移動できます。\r\n- Cloudflare の確認がある場合でも、ユーザー名とパスワードで再びログインできるようになりました。\r\n- コメントの通報、投稿前の注意表示、ユーザーのブロックに対応しました。\r\n- 大きな文字サイズ、VoiceOver、音声コントロールがアプリ全体で使えるようになりました。\r\n- すべての画面がデバイスの向きに合わせて回転するため、「横向きを有効」の設定は廃止しました。\r\n- 「自動ロック」の設定は廃止しました。EhPanda をロックするには、アイコンを長押しして「Face IDを必要にする」または「Touch IDを必要にする」を選んでください。\r\n- 初回起動時に、成人であることの確認と、匿名の利用データをどこまで共有するかの選択を行います。\r\n- WebP 画像に対応し、多数の不具合を修正しました。\r\n\r\n</details>\r\n\r\n<details>\r\n<summary>한국어</summary>\r\n\r\nEhPanda 3.0이 새로운 디자인으로 다시 만들어졌습니다.\r\n\r\n- 갤러리를 다운로드해 오프라인으로 읽고, 폴더로 정리하고, 백그라운드에서도 계속 다운로드할 수 있습니다.\r\n- '날짜로 이동'으로 원하는 날짜 전후의 갤러리로 이동할 수 있습니다.\r\n- Cloudflare 확인이 있어도 다시 사용자 이름과 비밀번호로 로그인할 수 있습니다.\r\n- 댓글 신고, 게시 전 경고, 사용자 차단을 지원합니다.\r\n- 더 큰 텍스트, VoiceOver, 음성 제어를 이제 앱 전체에서 사용할 수 있습니다.\r\n- 모든 화면이 기기 방향에 맞춰 회전하므로 'Enables landscape' 설정이 제거되었습니다.\r\n- '앱 자동 잠금' 설정이 제거되었습니다. EhPanda를 잠그려면 아이콘을 길게 터치한 다음 'Face ID 요구' 또는 'Touch ID 요구'를 선택하세요.\r\n- 처음 실행할 때 성인인지 확인하고, 익명 사용 데이터를 얼마나 공유할지 선택합니다.\r\n- WebP 이미지를 지원하고 여러 문제를 수정했습니다.\r\n\r\n</details>\r\n\r\n<details>\r\n<summary>简体中文</summary>\r\n\r\nEhPanda 3.0 全新打造，焕然一新。\r\n\r\n- 下载画廊离线阅读，整理到文件夹，切到后台也能继续下载。\r\n- 使用“跳转到日期”，前往任意日期前后的画廊。\r\n- 即使遇到 Cloudflare 验证，也能再次使用用户名和密码登录。\r\n- 可以举报评论，发布前会看到提醒，还可以屏蔽用户。\r\n- 更大字体、旁白和语音控制现已适用于整个应用。\r\n- 所有页面都会随设备旋转，因此移除了“启用横屏”设置。\r\n- “自动锁定”设置已移除。如需锁定 EhPanda，请按住图标，然后选择“需要面容 ID”或“需要触控 ID”。\r\n- 首次启动时，需确认你已成年，并选择分享多少匿名使用数据。\r\n- 支持 WebP 图片，并修复了许多问题。\r\n\r\n</details>\r\n\r\n<details>\r\n<summary>繁體中文</summary>\r\n\r\nEhPanda 3.0 全新打造，煥然一新。\r\n\r\n- 下載畫廊離線閱讀、整理到資料夾，切到背景也能繼續下載。\r\n- 使用「前往日期」，前往任何日期前後的畫廊。\r\n- 即使遇到 Cloudflare 驗證，也能再次使用使用者名稱和密碼登入。\r\n- 可以檢舉留言，發布前會看到提醒，也可以封鎖使用者。\r\n- 更大的文字、旁白和語音控制現在適用於整個 App。\r\n- 所有畫面都會隨裝置旋轉，因此移除了「啟用橫向顯示」設定。\r\n- 「自動鎖定」設定已移除。如需鎖定 EhPanda，請按住圖像，然後選擇「需要 Face ID」或「需要 Touch ID」。\r\n- 首次啟動時，需要確認你已成年，並選擇要分享多少匿名使用資料。\r\n- 支援 WebP 圖片，並修正了許多問題。\r\n\r\n</details>\r\n",
+          "minOSVersion": "27.0"
         }
       ],
-      "version": "2.8.1",
-      "versionDate": "2026-07-20",
-      "downloadURL": "https://github.com/EhPanda-Team/EhPanda/releases/download/v2.8.1/EhPanda.ipa",
-      "size": 7352364
+      "version": "3.0.0",
+      "versionDate": "2026-11-12",
+      "downloadURL": "https://github.com/EhPanda-Team/EhPanda/releases/download/3.0.0/EhPanda-SideStore.ipa",
+      "size": 18858399
     }
   ],
   "news": []
