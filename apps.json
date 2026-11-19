@@ -30,5 +30,13 @@
     "developerName": "EhPanda Team",
     "localizedDescription": "使用 SwiftUI 和 TCA 构建的非官方 E-Hentai iOS 客户端。",
     "iconURL": "https://raw.githubusercontent.com/EhPanda-Team/EhPanda/main/EhPanda/App/Assets.xcassets/AppIcon.appiconset/1024.png"
+  },
+  {
+    "repo": "liuchuancong/pure_live",
+    "assetRegex": "PureLive-.*-ios-arm64-trollstore\\.ipa",
+    "name": "纯粹直播",
+    "developerName": "liuchuancong",
+    "localizedDescription": "开源的第三方多平台直播聚合播放器，支持多画面同看、弹幕和录制。",
+    "iconURL": "https://raw.githubusercontent.com/liuchuancong/pure_live/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png"
   }
 ]

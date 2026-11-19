@@ -1,6 +1,6 @@
 # Wamess SideStore Source
 
-自动跟踪 VeneraX、Venera Next、PiliPlus、EhPanda 的最新正式 GitHub Release。
+自动跟踪 VeneraX、Venera Next、PiliPlus、EhPanda、纯粹直播的最新正式 GitHub Release。
 IPA 直接链接到上游附件，不上传或修改安装包。
 
 ## 使用
